@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchTables } from './redux/tablesReducer';
+import { API_URL } from './config';
 
 import Header from './components/views/Header/Header';
 import Footer from './components/views/Footer/Footer';
@@ -17,7 +18,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3131/api/tables');
+        const response = await fetch(`${API_URL}/tables`);
         const data = await response.json();
         dispatch(fetchTables(data));
       } catch (error) {
