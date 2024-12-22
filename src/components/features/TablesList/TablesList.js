@@ -4,6 +4,10 @@ import TableInfo from "../TableInfo/TableInfo";
 const TablesList = () => {
 const tables = useSelector((state) => state.tables);
 
+const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
     return (
     
     <div>
@@ -11,7 +15,7 @@ const tables = useSelector((state) => state.tables);
             <TableInfo 
                 key={table.id} 
                 id={table.id} 
-                status={table.status} />
+                status={capitalizeFirstLetter(table.status)}  />
         ))}
     </div>
 );
