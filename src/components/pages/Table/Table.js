@@ -38,7 +38,7 @@ const Table = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3131/api/tables/${id}`, {
+      const response = await fetch(`https://ab90b671-5766-4aab-80aa-86d4a1844a70-00-2uv0nvsxbqyd2.spock.replit.dev/api/tables/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
